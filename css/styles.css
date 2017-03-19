@@ -36,7 +36,7 @@ body {
   position: absolute;
 }
 .source {
-  font-size: 1.25rem;;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   line-height: 1.1;
   text-align: right;
@@ -57,6 +57,13 @@ body {
   font-style: normal;
 }
 
+.tags {
+  font-size: 1.1rem;
+  line-height: 1.1;
+  text-align: right;
+  margin-right: 4em;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
@@ -69,7 +76,7 @@ body {
   color: #fff;
   background-color: #36b55c;
   padding: 15px 0;
-  transition: .5s ;
+  transition: .5s;
 }
 #loadQuote:hover {
   background-color: rgba(255,255,255,.25);
