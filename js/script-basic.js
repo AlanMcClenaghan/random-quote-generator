@@ -1,3 +1,5 @@
+//JavaScript code for Meets Expectations grade
+
 //Create a function named getRandomQuote:
 function getRandomQuote() {
   //which selects a random quote object from the quotes array & returns the randomly selected quote object
