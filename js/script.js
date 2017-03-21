@@ -1,3 +1,6 @@
+//Creates a clone of the quotes array
+var quotesClone = quotes.slice();
+
 //Create a function named getRandomQuote:
 function getRandomQuote() {
   //which selects a random quote object from the quotes array & returns the randomly selected quote object
@@ -36,14 +39,18 @@ function printQuote() {
   //When the quote changes, randomly change the background color of the page - function called.
   document.body.style.backgroundColor = randomRGB();
   //To help reviewers (and yourself) verify that the quotes don’t repeat until they’ve all been displayed, log the quote to the console each time the “Show Another Quote” button is clicked.
-  console.log(randomQuote);
+  console.log(randomQuote.quote);
   //Don't display a random quote more than once until ALL quotes from the array have been displayed.
-  quotes.pop(randomQuote);
-  if(quotes.length === 0){
-    location.reload();
-  }
+    //Finds index number of used quote
+    var usedQuotesIndex = quotes.indexOf(randomQuote);
+    //Removes quote using index number of the quote
+    quotes.splice(usedQuotesIndex, 1);
+    //When quotes array is empty, the quotesClone array is cloned to the quotes array
+    if(quotes.length === 0){
+      quotes = quotesClone.slice();
+    }
 }
-
+  
 printQuote();
 
 //Refresh the quote after a set amount of time. For example, every 30 seconds, make a new quote appear. (You can use the setInterval() or setTimeout() method to do this -- see the links in the “Additional Resources” section).
@@ -52,3 +59,4 @@ var intervalID = window.setInterval(printQuote, 15000);
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
